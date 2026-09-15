@@ -1,0 +1,299 @@
+/* =========================================================
+   Assignment #1 - HTML & CSS Basics
+   Author: Aida Aday
+   Palette:
+     page background  #f4effb  (soft lavender)
+     text             #2b2140  (dark plum)
+     accent / links   #6a3fb5  (violet)
+     accent hover     #4a2585  (deep violet)
+     borders          #d9cdee  (light lilac)
+   ========================================================= */
+
+
+/* ---------- 1. Element selectors: general styling ---------- */
+
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #2b2140;
+    background-color: #f4effb;
+}
+
+h1,
+h2,
+h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.2;
+    color: #2b2140;
+}
+
+h1 {
+    margin: 0 0 8px;
+    font-size: 44px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: normal;
+}
+
+h3 {
+    margin: 0 0 16px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+p {
+    margin: 0 0 12px;
+}
+
+a {
+    color: #6a3fb5;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    color: #4a2585;
+}
+
+/* Visible keyboard focus for links, buttons and form fields */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #6a3fb5;
+    outline-offset: 3px;
+}
+
+
+/* ---------- 2. Header and navigation ---------- */
+
+.site-header {
+    padding: 40px 20px 0;
+    text-align: center;
+    background-color: #2b2140;
+    border-bottom: 6px solid #6a3fb5;
+}
+
+/* Descendant selectors: headings inside the header */
+.site-header h1 {
+    color: #ffffff;
+}
+
+.site-header .course-name {
+    margin: 0 0 28px;
+    font-style: italic;
+    color: #d9cdee;
+}
+
+.site-nav {
+    padding: 14px 10px;
+    background-color: #3a2d57;
+}
+
+/* Descendant selector: links inside the navigation */
+.site-nav a {
+    display: inline-block;
+    margin: 4px 6px;
+    padding: 8px 14px;
+    color: #ffffff;
+    font-size: 15px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.site-nav a:hover {
+    color: #ffffff;
+    background-color: #6a3fb5;
+    border-color: #b9a2e3;
+}
+
+.site-nav a:focus-visible {
+    outline-color: #ffffff;
+}
+
+
+/* ---------- 3. Main content (box model) ---------- */
+
+.page-content {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 20px;
+}
+
+/* Class selector: reusable card for every section */
+.content-section {
+    margin-bottom: 28px;
+    padding: 28px 32px;
+    background-color: #ffffff;
+    border: 1px solid #d9cdee;
+    border-left: 6px solid #6a3fb5;
+    border-radius: 6px;
+}
+
+.section-title {
+    padding-bottom: 8px;
+    border-bottom: 2px solid #d9cdee;
+}
+
+
+/* ---------- 4. ID selector: one unique section ---------- */
+
+#about-me {
+    background-color: #ebe2f8;
+    border-left-color: #2b2140;
+}
+
+
+/* ---------- 5. Profile card and image ---------- */
+
+.profile-card {
+    overflow: hidden; /* contains the floated photo */
+    margin-bottom: 8px;
+}
+
+.profile-photo {
+    float: left;
+    width: 180px;
+    height: 240px;
+    margin: 0 24px 12px 0;
+    object-fit: cover; /* keeps proportions, no distortion */
+    border: 4px solid #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 6px 16px rgba(43, 33, 64, 0.25);
+}
+
+.intro-text {
+    font-size: 17px;
+}
+
+
+/* ---------- 6. Lists ---------- */
+
+.styled-list {
+    margin: 0;
+    padding-left: 24px;
+}
+
+/* Descendant selector: items inside styled lists */
+.styled-list li {
+    margin-bottom: 6px;
+    padding-left: 4px;
+}
+
+.styled-list li::marker {
+    color: #6a3fb5;
+    font-weight: bold;
+}
+
+
+/* ---------- 7. Schedule table ---------- */
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.schedule-table caption {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #5c5070;
+    text-align: left;
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 12px 14px;
+    text-align: left;
+    border: 1px solid #d9cdee;
+}
+
+.schedule-table th {
+    color: #ffffff;
+    background-color: #2b2140;
+}
+
+.schedule-table tbody tr:nth-child(even) {
+    background-color: #f4effb;
+}
+
+
+/* ---------- 8. Mood paragraph ---------- */
+
+.mood-text {
+    padding: 16px 20px;
+    font-size: 18px;
+    background-color: #f4effb;
+    border-radius: 6px;
+}
+
+
+/* ---------- 9. Form and buttons ---------- */
+
+.contact-form label {
+    display: block;
+    margin: 14px 0 6px;
+    font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"] {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 12px;
+    font-family: inherit;
+    font-size: 16px;
+    color: #2b2140;
+    border: 2px solid #d9cdee;
+    border-radius: 4px;
+}
+
+.contact-form input[type="color"] {
+    width: 64px;
+    height: 40px;
+    padding: 2px;
+    border: 2px solid #d9cdee;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.main-button {
+    display: block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #6a3fb5;
+    border: 2px solid #6a3fb5;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.main-button:hover {
+    background-color: #4a2585;
+    border-color: #4a2585;
+}
+
+
+/* ---------- 10. Footer ---------- */
+
+.site-footer {
+    padding: 24px 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #d9cdee;
+    background-color: #2b2140;
+}
+
+.site-footer p {
+    margin: 0;
+}
